@@ -3,10 +3,11 @@ import { Schema, model } from "mongoose";
 const todoSchema = new Schema({
     title: {
         type: String,
-        required: [true, "Title is Required"]
+        required: true
     },
     desc: {
         type: String,
+        default:''
     },
     isCompleted: {
         type: Boolean,
@@ -14,7 +15,7 @@ const todoSchema = new Schema({
     },
     priority: {
         type: String,
-        enum: ['HIGH', 'MID', 'LOW'],
+        // enum: ['HIGH', 'MID', 'LOW'],
         default: 'LOW'
     }
 }, { timestamps: true })
